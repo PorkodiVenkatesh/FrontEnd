@@ -7,19 +7,16 @@
         function convertToF() {
             var c = document.getElementById("Celisus").value;
             var f = c * 9 / 5 + 32;
-            console.log("The Fahrenheit is " + f);
             document.getElementById('Fahrenheit').innerHTML = "The Fahrenheit is " + f;
-            alert("The Fahrenheit is " + f);
         }
     </script>
 </head>
 
 <body>
     <form>
-
         Celisus: <input type="text" id="Celisus"> <br>
-        <button onclick="convertToF()"> convert</button>
     </form>
+    <button onclick="convertToF()"> convert</button>
     <p id="Fahrenheit"></p>
 </body>
 
