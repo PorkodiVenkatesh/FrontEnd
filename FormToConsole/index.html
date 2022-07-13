@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My Website</title>
+    <script>
+        function toConsole() {
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            console.log(`name = ${name}  age = ${age} `)
+        }
+    </script>
+</head>
+
+<body>
+
+    name : <input type="text" id="name" /> <br> age : <input type="text" id="age" /> <br>
+    <button onclick="toConsole()">Move to Console</button>
+
+</body>
+
+</html>
