@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Index Page</title>
+    <script>
+        function handleSubmit() {
+            const n = document.getElementById("name").value;
+            const a = document.getElementById("age").value;
+
+            sessionStorage.setItem("nameSS", n)
+            sessionStorage.setItem("ageSS", a)
+
+        }
+    </script>
+</head>
+
+<body>
+    <form action="result.html" method="post">
+        name : <input type="text" id="name" name="name" placeholder="enter your name" /> <br> age : <input type="text" id="age" name="age" placeholder="enter your age" /> <br>
+        <input type="submit" onclick="handleSubmit()" />
+    </form>
+
+</body>
+
+</html>
