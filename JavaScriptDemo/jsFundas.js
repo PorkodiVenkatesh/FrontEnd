@@ -85,6 +85,13 @@ var student = [{
 for (let i in student) {
     console.log(i, student[i].id, student[i].name, student[i].class)
 }
+console.log(student[0].id)
+document.getElementById("id0").innerHTML = student[0].id;
+document.getElementById("id1").innerHTML = student[1].id;
+document.getElementById("name0").innerHTML = student[0].name;
+document.getElementById("name1").innerHTML = student[1].name;
+document.getElementById("class0").innerHTML = student[0].class;
+document.getElementById("class1").innerHTML = student[1].class;
 
 console.log(student)
 
