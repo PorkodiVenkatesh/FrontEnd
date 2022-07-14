@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Event Capturing</title>
+
+</head>
+
+<body id="body">
+    <div id="div">
+        <ul id="ul">
+            <li id="li">
+                <button id="btn"> Click here to see event capturing</button>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        function display() {
+            alert('Capturing ' + this.tagName)
+        }
+
+        document.getElementById("body").addEventListener("click", display, true)
+        document.getElementById("div").addEventListener("click", display, true)
+        document.getElementById("ul").addEventListener("click", display, true)
+        document.getElementById("li").addEventListener("click", display, true)
+        document.getElementById("btn").addEventListener("click", display, true)
+
+        // var elmts = document.querySelectorAll("#body", "#div", "#ul", "#li", "#btn")
+        // console.log(elmts)
+        // for (let elmt in elmts) {
+        //     elmt.addEventListener("click", display, true)
+        // }
+    </script>
+</body>
+
+</html>

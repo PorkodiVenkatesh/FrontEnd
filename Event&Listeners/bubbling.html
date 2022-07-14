@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+    <script>
+        function display(tag) {
+            alert('Bubbling ' + tag)
+        }
+    </script>
+</head>
+
+<body onclick=" display(this.tagName) ">
+    <div onclick=" display(this.tagName) ">
+        <ul ondblclick="display(this.tagName) ">
+            <li>
+                <button onclick="display(this.tagName) "> Click here to Bubble Up</button>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

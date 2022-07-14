@@ -44,8 +44,13 @@ function func4() {
     console.log("double clicked")
 }
 
+
+document.writeln("hi")
+document.write("porkodi")
+
 let value = prompt("Enter any value", 50)
 console.log(value)
+
 
 let isClose = confirm("are you close?")
 
