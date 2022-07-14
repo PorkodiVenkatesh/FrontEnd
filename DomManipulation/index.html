@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Selecting DOM Elements</title>
+
+</head>
+
+
+<body>
+
+    <p id="para"> this is para 1</p>
+    <p class="cls1"> this is para 2</p>
+    <p class="cls1">this is para 3</p>
+    <h1 class="cls1"> this is h1</h1>
+    <script>
+        var elmt = document.getElementById("para")
+        console.log(elmt.textContent)
+
+
+        var elmts = document.getElementsByClassName("cls1")
+        for (let i in elmts) {
+            console.log(elmts[i].tagName + " -> " + elmts[i].textContent)
+        }
+
+        var elmtsTagName = document.getElementsByTagName("p")
+        for (let i in elmtsTagName) {
+            console.log(elmtsTagName[i].tagName + " -> " + elmtsTagName[i].textContent)
+        }
+
+        var qs1 = document.querySelector("#para");
+        console.log("qs1-" + qs1.textContent)
+
+        var qs2 = document.querySelector(".cls1")
+        console.log("qs2-" + qs2.textContent)
+
+        var qs3 = document.querySelectorAll(".cls1")
+        for (let i in qs3) {
+            console.log("qs3-" + qs3[i].textContent)
+        }
+
+
+        var qs4 = document.querySelectorAll("p")
+        for (let i in qs4) {
+            console.log("qs4-" + qs4[i].textContent)
+        }
+    </script>
+</body>
+
+</html>
