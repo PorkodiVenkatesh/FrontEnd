@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Manipulation the DOM</title>
+</head>
+
+<body>
+    <ul id="parent">
+        <li id="1">apple</li>
+        <li id="2">orange</li>
+        <li>mango</li>
+        <li>Grapes</li>
+    </ul>
+
+    <button onclick="appendChildDOM()">Append Child</button>
+    <button onclick="insertBeforeDOM()">Insert Before Orange</button>
+    <button onclick="removeElementDOM()">Remove Elememt</button>
+
+    <script>
+        function appendChildDOM() {
+            var elmt = document.createElement('li')
+            elmt.innerHTML = "Dog"
+
+            var par = document.getElementById("parent")
+            par.appendChild(elmt)
+        }
+
+        function insertBeforeDOM() {
+            var elmt = document.createElement('li')
+            elmt.innerHTML = "Cat"
+
+            var par = document.getElementById("parent")
+            par.insertBefore(elmt, document.getElementById("2"))
+        }
+
+        function removeElementDOM() {
+            var par = document.getElementById("parent")
+            par.removeChild(par.lastChild)
+        }
+    </script>
+
+</body>
+
+</html>
