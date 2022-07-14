@@ -15,7 +15,7 @@ var g = d / 7; // string by 7 //NaN //Number
 var h = e - 9; // string - 9
 
 
-function print() {
+function print2() {
     //variable i'm accessing here is declared & initialized outside
     console.log("a = " + a + " b = " + b)
     console.log("a = " + typeof(a) + " b = " + typeof(b))
@@ -30,7 +30,7 @@ type of g and h is ${typeof(g)} ${typeof(h)} `)
     let n = 34; // within this function //block scope
 }
 
-print()
+print2()
 
 //console.log(n) - jsFundas.js:35 Uncaught ReferenceError: n is not defined
 let z; //declared
