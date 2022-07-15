@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>AJAX DEMO 2</title>
+</head>
+
+<body>
+    <h1> AJAX Demo 3 with JSON</h1>
+    <h3> Post a User</h3>
+    <input type="text" id="name" placeholder="Enter the name" />
+    <input type="text" id="username" placeholder=" Enter the username" />
+    <input type="email" id="email" placeholder="Enter the email" />
+    <input type="text" id="phone" placeholder="Enter phone number">
+    <button id="btn1"> Add User Data</button>
+
+    <button id="btn2"> Load User Data</button>
+    <h1> User Details</h1>
+    <table border="1" id="table">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>UserName</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+    </table>
+    <script>
+        var btnElmt1 = document.getElementById("btn1");
+        btnElmt1.addEventListener("click", addUserUsingFetch);
+
+        var btnElmt2 = document.getElementById("btn2");
+
+        btnElmt2.addEventListener("click", loadDataUsingFetch);
+
+
+        async function addUserUsingFetch() {
+            var name = document.getElementById("name").value;
+            var username = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+
+            var data = {}
+            data.name = name;
+            data.username = username
+            data.email = email
+            data.phone = phone
+
+            let response = await fetch("http://localhost:3000/users", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+
+            });
+
+            console.log(response.status)
+            console.log(response.statusText)
+            let resdata = await response.json();
+            alert("User is added, has id = " + resdata.id)
+        }
+
+
+
+
+        async function loadDataUsingFetch() {
+            let response = await fetch("http://localhost:3000/users", {
+                method: 'GET'
+            });
+            console.log(response.status)
+            console.log(response.statusText)
+            let data = await response.json();
+            renderHTML(data)
+
+        }
+
+
+        function renderHTML(data) {
+            var parent = document.getElementById("table");
+            for (let i = 0; i < data.length; i++) {
+                var elmt = document.createElement("tr");
+
+                var idElemt = document.createElement("td");
+                idElemt.innerHTML = data[i].id;
+                elmt.appendChild(idElemt);
+
+                var nameElemt = document.createElement("td");
+                nameElemt.innerHTML = data[i].name;
+                elmt.appendChild(nameElemt);
+
+
+                var usernameElemt = document.createElement("td");
+                usernameElemt.innerHTML = data[i].username;
+                elmt.appendChild(usernameElemt);
+
+                var emailElemt = document.createElement("td");
+                emailElemt.innerHTML = data[i].email;
+                elmt.appendChild(emailElemt);
+
+
+                var phoneElemt = document.createElement("td");
+                phoneElemt.innerHTML = data[i].phone;
+                elmt.appendChild(phoneElemt);
+
+
+                parent.appendChild(elmt)
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>
