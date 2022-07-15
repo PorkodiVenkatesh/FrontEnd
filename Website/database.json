@@ -1,0 +1,29 @@
+{
+    "users": [{
+            "id": 1,
+            "firstName": "Porkodi",
+            "lastName": "Venkatesh",
+            "username": "Porko",
+            "email": "porkodi@gmail.com",
+            "password": "pass@123",
+            "gender": "female",
+            "location": "chennai",
+            "interests": [
+                "Technology", "Cinemas", "Art", "Games"
+            ]
+        },
+        {
+            "id": 2,
+            "firstName": "abc",
+            "lastName": "cde",
+            "username": "ac",
+            "email": "ac@gmail.com",
+            "password": "pass@123",
+            "gender": "male",
+            "location": "chennai",
+            "interests": [
+                "Technology", "Cinemas", "Art", "Games"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>website</title>
+    <script>
+        window.addEventListener("load", () => {
+            const id = sessionStorage.getItem("id");
+            const username = sessionStorage.getItem("username");
+            document.getElementById("uname").innerHTML = username
+        })
+    </script>
+</head>
+
+<body>
+    <h1>Hi, <span id="uname"></span> !!!</h1>
+
+</body>
+
+</html>

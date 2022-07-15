@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login Page</title>
+    <script>
+        function login() {
+            //getting the user name and password what they entered
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            getUserByUserName(username, password)
+        }
+
+        async function getUserByUserName(username, password) {
+            let response = await fetch("http://localhost:3000/users?username=" + username, {
+                method: 'GET'
+            });
+
+            let data = await response.json();
+            console.log(data)
+            if (data.length == 1) {
+                if (data[0].password == password) {
+                    sessionStorage.setItem("id", data[0].id)
+                    sessionStorage.setItem("username", data[0].username)
+                    window.location.href = "website.html"
+                } else {
+                    alert("Incorrent password!");
+                }
+            } else {
+                alert("User not found!New User")
+                    // window.location.href = "register.html"
+            }
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Login </h1>
+    <h3> UserName : <input type="text" id="username" /> </h3>
+    <h3> Password : <input type="password" id="password" /> </h3>
+    <button onclick="login()">Login</button>
+    <h3> New user, Click <a href="register.html"> here </a> to register</h3>
+</body>
+
+</html>
