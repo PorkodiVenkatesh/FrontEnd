@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>AJAX DEMO 2</title>
+</head>
+
+<body>
+    <h1> AJAX Demo 2 with JSON</h1>
+    <h3> Get User by ID</h3>
+    <input type="text" id="userid" placeholder="Enter the User ID" />
+    <button id="btn"> Load User Data</button>
+    <h1> User Details</h1>
+    <table border="1" id="table">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>UserName</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+    </table>
+    <script>
+        var btnElmt = document.getElementById("btn");
+
+        btnElmt.addEventListener("click", loadDataUsingAJAX);
+
+        function loadDataUsingAJAX() {
+            // 1. create the xmlHTTPRequest Object
+            var xhttp = new XMLHttpRequest();
+
+            //2. Open (method, url,async)
+            var userID = document.getElementById("userid").value;
+            var url = "http://localhost:3000/users/" + userID
+            xhttp.open("GET", url, true);
+
+
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var data = JSON.parse(this.responseText);
+                    renderHTML(data)
+                    console.log(data)
+                }
+                if (this.status == 404) {
+                    alert("User Not Found")
+                }
+            };
+
+            //3. send
+            xhttp.send()
+
+        }
+
+
+        function renderHTML(data) {
+            var parent = document.getElementById("table");
+            var elmt = document.createElement("tr");
+
+            var idElemt = document.createElement("td");
+            idElemt.innerHTML = data.id;
+            elmt.appendChild(idElemt);
+
+            var nameElemt = document.createElement("td");
+            nameElemt.innerHTML = data.name;
+            elmt.appendChild(nameElemt);
+
+
+            var usernameElemt = document.createElement("td");
+            usernameElemt.innerHTML = data.username;
+            elmt.appendChild(usernameElemt);
+
+            var emailElemt = document.createElement("td");
+            emailElemt.innerHTML = data.email;
+            elmt.appendChild(emailElemt);
+
+
+            var phoneElemt = document.createElement("td");
+            phoneElemt.innerHTML = data.phone;
+            elmt.appendChild(phoneElemt);
+
+
+            parent.appendChild(elmt)
+        }
+    </script>
+
+</body>
+
+</html>
