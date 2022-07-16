@@ -9,7 +9,10 @@
             "gender": "female",
             "location": "chennai",
             "interests": [
-                "Technology", "Cinemas", "Art", "Games"
+                "Technology",
+                "Cinemas",
+                "Art",
+                "Games"
             ]
         },
         {
@@ -22,8 +25,27 @@
             "gender": "male",
             "location": "chennai",
             "interests": [
-                "Technology", "Cinemas", "Art", "Games"
+                "Technology",
+                "Cinemas",
+                "Art",
+                "Games"
             ]
+        },
+        {
+            "firstName": "Adcsf",
+            "lastName": "asdfda",
+            "username": "aaaa",
+            "password": "aaa",
+            "email": "aaa",
+            "gender": "male",
+            "location": "Pune",
+            "interests": [
+                "Technology",
+                "Painting",
+                "Music",
+                "Dance"
+            ],
+            "id": 3
         }
     ]
 }

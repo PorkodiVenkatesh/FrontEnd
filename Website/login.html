@@ -21,14 +21,22 @@
             if (data.length == 1) {
                 if (data[0].password == password) {
                     sessionStorage.setItem("id", data[0].id)
+                    sessionStorage.setItem("firstName", data[0].firstName)
+                    sessionStorage.setItem("lastName", data[0].lastName)
                     sessionStorage.setItem("username", data[0].username)
+                    sessionStorage.setItem("email", data[0].email)
+                    sessionStorage.setItem("gender", data[0].gender)
+                    sessionStorage.setItem("location", data[0].location)
+                    sessionStorage.setItem("interests", data[0].interests)
                     window.location.href = "website.html"
                 } else {
-                    alert("Incorrent password!");
+                    alert("Incorrect password!");
                 }
             } else {
-                alert("User not found!New User")
-                    // window.location.href = "register.html"
+                let choice = confirm("User not found!New User, Do you want to Register?")
+                if (choice) {
+                    window.location.href = "register.html"
+                }
             }
 
 
