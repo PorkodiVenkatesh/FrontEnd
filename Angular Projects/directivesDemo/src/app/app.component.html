@@ -1,0 +1,42 @@
+<h1> Structural Directives</h1>
+<li> Used to Manipulate/chabe the structure DOM Elements</li>
+<li> three built in SD -> ngIf, ngfor and ngSwitch</li>
+<li> * then the directive</li>
+
+
+<h1>ngIf</h1>
+<p *ngIf="true"> This is true block</p>
+<p *ngIf="false"> This is false block</p>
+
+<div *ngIf="5>10; else elseBlock">
+    5 is greater than 10....
+</div>
+<ng-template #elseBlock>
+    10 is greater than 5...
+</ng-template>
+
+<h1>ngFor</h1>
+
+<p *ngFor=" let n of nums;">
+    <li>{{n}}</li>
+</p>
+
+<p *ngFor=" let u of users;">
+    <li>{{u.id}} -> {{u.name}} </li>
+</p>
+
+<p *ngFor=" let e of emps;">
+    <li>{{e.id}} -> {{e.name}} -> {{e.dept}}</li>
+</p>
+
+<input type="text" [(ngModel)]="num" />
+<div [ngSwitch]="num">
+    <div *ngSwitchCase="'1'"> Its Day 1 of week. Monday!!</div>
+    <div *ngSwitchCase="'2'"> Its Day 2 of week. Tuesday!!</div>
+    <div *ngSwitchCase="'3'"> Its Day 3 of week. Wednesday!!</div>
+    <div *ngSwitchCase="'4'"> Its Day 4 of week. Thursday!!</div>
+    <div *ngSwitchCase="'5'"> Its Day 5 of week. Friday!!</div>
+    <div *ngSwitchCase="'6'"> Its Day 6 of week. Saturday!!</div>
+    <div *ngSwitchCase="'7'"> Its Day 7 of week. Sunday!!</div>
+    <div *ngSwitchDefault> Enter the number between 1 to 7 </div>
+</div>
