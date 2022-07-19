@@ -9,3 +9,11 @@
 
 <h1> 1 way Data Binding using Event Binding - Data html to ts</h1>
 <button (click)="OnClick()"> Click Here</button>
+
+<h1> 2 way DataBinding using ngModel - Data from html to ts</h1>
+
+<input type="text" placeholder="Enter any message" [(ngModel)]="msg" />
+
+<h2> 2 way databinding using ngModel - Data from ts to html</h2>
+
+your message is {{msg}}

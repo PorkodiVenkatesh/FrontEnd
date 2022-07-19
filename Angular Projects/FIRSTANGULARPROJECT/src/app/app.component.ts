@@ -9,9 +9,10 @@ export class AppComponent {
   title = 'FIRSTANGULARPROJECT';
   name = "Porkodi"
   imgsrc = "https://www.sattvagroup.in/wp-content/uploads/2018/05/Image-Tower.jpg"
+  msg ='';
 
-
-  OnClick(){
+  OnClick(): void{
     alert("button clicked!!!")
+    console.log(this.msg)
   }
 }
