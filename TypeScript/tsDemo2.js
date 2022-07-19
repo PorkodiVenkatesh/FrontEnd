@@ -1,0 +1,10 @@
+import { myVar } from "./tsDemo1";
+import { sayHello } from "./tsDemo1";
+import { user } from "./tsDemo3";
+console.log(myVar);
+sayHello("From demo 2");
+const u = new user();
+u.username = "poko";
+u.id = 1;
+u.password = "pass123";
+u.display();
