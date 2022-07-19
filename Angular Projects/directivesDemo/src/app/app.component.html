@@ -8,11 +8,20 @@
 <p *ngIf="true"> This is true block</p>
 <p *ngIf="false"> This is false block</p>
 
-<div *ngIf="5>10; else elseBlock">
+<div *ngIf="5>10; else elseBlock1">
     5 is greater than 10....
 </div>
-<ng-template #elseBlock>
+<ng-template #elseBlock1>
     10 is greater than 5...
+</ng-template>
+
+<input type="text" [(ngModel)]="a" />
+<input type="text" [(ngModel)]="b" />
+<div *ngIf="a>b; else elseBlock2">
+    a is greater than b....
+</div>
+<ng-template #elseBlock2>
+    b is greater than a...
 </ng-template>
 
 <h1>ngFor</h1>
@@ -40,3 +49,19 @@
     <div *ngSwitchCase="'7'"> Its Day 7 of week. Sunday!!</div>
     <div *ngSwitchDefault> Enter the number between 1 to 7 </div>
 </div>
+
+
+<h1> Attribute Directives</h1>
+<li> styles/ how they look</li>
+
+<div [ngClass]="'class1'"> Only Class1 </div>
+<div [ngClass]="'class2'"> Only Class2 </div>
+<div [ngClass]="['class1', 'class3']"> Only Class1 and Class3 </div>
+<div [ngClass]="{'class1' : true , 'class2' : false, 'class3' : true}"> Except Class2/ Only Class1 and Class3 </div>
+
+<input type="text" placeholder="Enter a number" [(ngModel)]="clNum">
+<div [ngStyle]="{'background-color' : clNum > 10 ? 'green' : 'red'}"> Applying style based on the class number </div>
+
+
+
+<app-excerise></app-excerise>

@@ -26,8 +26,10 @@ export class AppComponent {
     {id : 14, name:  "Meera" , dept : "PD"}
    ];
 
-   num = 0;
-
+   num !: number;
+   a  !: number;
+   b  !: number;
+   clNum!: number;
 
 }
 interface emp {
