@@ -8,4 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'FIRSTANGULARPROJECT';
   name = "Porkodi"
+  imgsrc = "https://www.sattvagroup.in/wp-content/uploads/2018/05/Image-Tower.jpg"
+
+
+  OnClick(){
+    alert("button clicked!!!")
+  }
 }
