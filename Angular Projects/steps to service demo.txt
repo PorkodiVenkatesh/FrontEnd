@@ -1,0 +1,93 @@
+1. create an angular project -> ng new serviceDemo
+2. ng serve -o, check browser default page
+3. create two components -> ng g c first , ng g c second
+4. got to your app.component.html, remove all your content and add the selectors for first and second as a tag
+
+<app-first></app-first>
+<app-second></app-second>
+
+5. check browser, that says first works and second works
+6. go to src/assess/ new file -> database.json
+
+{
+    "users": [
+        { "id": 11, "name": "Chris", "age": 25 },
+        { "id": 12, "name": "Josph", "age": 25 },
+        { "id": 13, "name": "Alex", "age": 39 },
+        { "id": 14, "name": "John", "age": 40 }
+    ]
+}
+
+7. new terminal, cd src, cd asses, json-server --watch database.json
+8. Adding httpclient module in app.module.ts
+import {HttpClientModule} from '@angular/common/http'
+
+under @NgModule -  imports: [
+    BrowserModule,
+    HttpClientModule
+  ]
+
+9. create user.ts file
+
+export interface user {
+  id : number;
+  name : string;
+  age : number;
+}
+
+10. creating service file, new terminal
+ ng g s user
+
+CREATE src/app/user.service.spec.ts (347 bytes)
+CREATE src/app/user.service.ts (133 bytes)
+
+In user.service.ts
+
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { user } from './user';
+@Injectable({
+  providedIn: 'root'
+})
+export class UserService {
+
+  constructor(private http : HttpClient ) {}
+
+  getAllUsers() : Observable<user[]> {
+    return this.http.get<user[]>('http://localhost:3000/users');
+  }
+}
+
+11.in your first.component.ts
+
+ export class FirstComponent implements OnInit {
+   users : user[] = [];
+  constructor(private us : UserService) {
+   }
+
+  ngOnInit(): void {
+  }
+
+  getUsers(){
+    this.us.getAllUsers().subscribe(data =>{
+      this.users = data;
+    })
+  }
+
+}
+
+12. in your first.component.html
+
+ <h1>In first Component - getting all users </h1>
+
+<button (click)='getUsers()'> Get users </button>
+<div *ngFor="let u of users;">
+    <li>{{u.name}} - {{u.age}}</li>
+</div>
+
+14. run and check
+
+
+
+
