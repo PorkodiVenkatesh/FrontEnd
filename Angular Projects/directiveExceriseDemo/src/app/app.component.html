@@ -1,0 +1,31 @@
+<input type="text" [(ngModel)]="name" />
+<input type="text" [(ngModel)]="age" />
+
+<div *ngIf="age > 55; else elseBlock1">
+    {{name}} is a senior citizen
+</div>
+<ng-template #elseBlock1>
+    {{name}} is not a senior citizen
+</ng-template>
+
+
+<div *ngFor="let u of users;">
+    <div *ngIf="u.age>55; else elseBlock1">
+        {{u.name}} is a senior citizen
+    </div>
+    <ng-template #elseBlock1>
+        {{u.name}} is not a senior citizen
+    </ng-template>
+</div>
+
+<!-- user to enter any vowels(a, e, i o, u), print any word starting with vowels -->
+<input type="text" [(ngModel)]="str" />
+
+<div [ngSwitch]="str">
+    <div *ngSwitchCase="'a'">Entered a!! Word: Apple</div>
+    <div *ngSwitchCase="'e'"> Entered e!! Word: Egg</div>
+    <div *ngSwitchCase="'i'"> Entered i!! Word: Ice cream</div>
+    <div *ngSwitchCase="'o'"> Entered o!! Word: Orange</div>
+    <div *ngSwitchCase="'u'"> Entered u!! Word: Umberalla</div>
+    <div *ngSwitchDefault> You Entered Constant </div>
+</div>

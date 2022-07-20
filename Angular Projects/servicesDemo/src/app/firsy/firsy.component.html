@@ -1,0 +1,6 @@
+<h1>In first Component - getting all users </h1>
+
+<button (click)='getUsers()'> Get users </button>
+<div *ngFor="let u of users;">
+    <li>{{u.name}} - {{u.age}}</li>
+</div>
