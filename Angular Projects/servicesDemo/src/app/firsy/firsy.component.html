@@ -1,13 +1,10 @@
 <h1>In first Component - getting all users </h1>
 
-
+<button (click)='getUsers()'> Get All users </button>
+<div *ngFor="let u1 of users;">
+    <li>{{u1.name}} - {{u1.age}}</li>
+</div>
 
 id: <input type="text" [(ngModel)]="idToGet" />
-<button (click)='getUserById()'> Get users </button>
+<button (click)='getUserById()'> Get users By ID </button>
 <li>{{u.name}} - {{u.age}}</li>
-
-
-<button (click)='getUsers()'> Get users </button>
-<div *ngFor="let u of users;">
-    <li>{{u.name}} - {{u.age}}</li>
-</div>

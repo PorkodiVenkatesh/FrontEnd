@@ -9,7 +9,11 @@ import { UserService } from '../user.service';
 })
 export class FirsyComponent implements OnInit {
    users : user[] = [];
-   u !: user;
+   u: user = {
+     id: 0,
+     name: '',
+     age: 0
+   };
    idToGet !: number;
   constructor(private us : UserService) {
    }
@@ -25,7 +29,9 @@ export class FirsyComponent implements OnInit {
 
   getUserById(){
     this.us.getUserByID(this.idToGet).subscribe(data => {
-      this.u = data
+      this.u.id = data.id;
+      this.u.name = data.name;
+      this.u.age = data.age;
     })
 
   }
