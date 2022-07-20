@@ -10,9 +10,14 @@ export class UserService {
 
   constructor(private http : HttpClient ) {}
 
+  getUserByID(idToGet : number) : Observable<user> {
+    return this.http.get<user>('http://localhost:3000/users/' + idToGet );
+  }
+
   getAllUsers() : Observable<user[]> {
     return this.http.get<user[]>('http://localhost:3000/users');
   }
+
 
 
 
