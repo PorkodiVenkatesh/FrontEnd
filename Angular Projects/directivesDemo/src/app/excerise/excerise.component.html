@@ -2,9 +2,20 @@
 <input type="text" [(ngModel)]="name" />
 <input type="text" [(ngModel)]="age" />
 
-<!-- ngif -> age > 55, name is  senior citizen
-ng for -> iterate users -> age - > "name"  is a senior citizen -->
+<!-- ngif -> age > 55, name is  senior citizen-->
 
+<div *ngIf="age > 55; else elseBlock1">
+    {{name}} is a senior citizen
+</div>
+<ng-template #elseBlock1>
+    {{name}} is not a senior citizen
+</ng-template>
+
+<!-- ng for -> iterate users -> age - > "name"  is a senior citizen -->
+
+<div *ngFor=" let u of users;">
+    <li>{{u.name}} -> {{u.age}} </li>
+</div>
 <!-- user to enter any vowels(a, e, i o, u), print any word starting with vowels -->
 
 <!-- number -> even -> div : red , odd -> div -> green-->
