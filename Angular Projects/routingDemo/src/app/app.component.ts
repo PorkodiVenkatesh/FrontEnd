@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'routingDemo';
+  //yyyy,m,dd
+  //month jan ->0, feb -> 1
+  dob = new Date(1999, 0, 15)
 }

@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Components/UserComponents/login/login.component';
 import { RegisterComponent } from './Components/UserComponents/register/register.component';
+import { FirstCharPipe } from './Pipes/first-char.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    FirstCharPipe
   ],
   imports: [
     BrowserModule,
