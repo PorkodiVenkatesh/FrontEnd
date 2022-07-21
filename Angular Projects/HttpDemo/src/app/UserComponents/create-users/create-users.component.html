@@ -1,1 +1,7 @@
-<p>create-users works!</p>
+<h1>Create/Add a User</h1>
+<div>
+    <div>name: <input type="text" [(ngModel)]="nameToAdd" /> </div>
+    <div>age: <input type="text" [(ngModel)]="ageToAdd" /> </div>
+    <div>country: <input type="text" [(ngModel)]="countryToAdd" /> </div>
+    <button (click)="addUser()">Create User</button>
+</div>
