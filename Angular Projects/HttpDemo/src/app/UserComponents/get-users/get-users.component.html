@@ -1,1 +1,8 @@
-<p>get-users works!</p>
+<h1>Get Users</h1>
+
+<div>
+    <button (click)="getAllUsers()">Get All Users</button>
+    <div *ngFor="let user of users;">
+        <li>{{user.id}} - {{user.name}} - {{user.age}} - {{user.country}} </li>
+    </div>
+</div>
