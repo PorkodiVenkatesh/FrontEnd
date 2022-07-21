@@ -5,11 +5,13 @@ import { FirsyComponent } from './firsy/firsy.component';
 import { SecondComponent } from './second/second.component';
 import {HttpClientModule} from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
+import { PipeDemoPipe } from './pipe-demo.pipe';
 @NgModule({
   declarations: [
     AppComponent,
     FirsyComponent,
-    SecondComponent
+    SecondComponent,
+    PipeDemoPipe
   ],
   imports: [
     BrowserModule,

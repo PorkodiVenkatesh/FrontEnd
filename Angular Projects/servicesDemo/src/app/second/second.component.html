@@ -1,4 +1,23 @@
-<h1>In second Component - User Names and age</h1>
-<div *ngFor="let u of users;">
-    <li>{{u.name}} - {{u.age}}</li>
-</div>
+<h1>Pipes</h1>
+<li>{{name}}</li>
+<li>{{name | uppercase}}</li>
+<li>{{name | lowercase}}</li>
+<p> DOB : {{birthday | date }}</p>
+<p>Date Of birth : {{ birthday | date:"MM/dd/yy" }} </p>
+<p>Date Of birth : {{ birthday | date | uppercase}} </p>
+
+<!--output '$100.23'-->
+<p>{{Value | currency}}</p>
+
+<!--output '₹100.23'-->
+<p>{{Value | currency:'INR'}}</p>
+
+
+<p>{{3.676 | number}}</p>
+<!--output '3.676'-->
+<p>{{ 3.67 | number:'3.4-6'}}</p>
+<!--output '003.1400'-->
+<p>{{-2.5 | number:'1.0-0'}}</p>
+<!--output '-3'-->
+
+{{ 'porkodi' | pipeDemo}}

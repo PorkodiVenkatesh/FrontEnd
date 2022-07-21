@@ -12,10 +12,7 @@ export class SecondComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  users = [
-    { "id": 11, "name": "Chris", "age": "25" },
-    { "id": 12, "name": "Josph", "age": "25" },
-    { "id": 13, "name": "Alex", "age": "39" }
-]
-
+  name = "Porkodi"
+  birthday = new Date(1995,0, 15)
+  Value = 100.23
 }

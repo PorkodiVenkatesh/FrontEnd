@@ -1,10 +1,41 @@
-<h1>In first Component - getting all users </h1>
-
-<button (click)='getUsers()'> Get All users </button>
-<div *ngFor="let u1 of users;">
-    <li>{{u1.name}} - {{u1.age}}</li>
+<h1>All HTTP Methods Demo </h1>
+<div>
+    <h3>Get All Users</h3>
+    <button (click)='getUsers()'> Get All users </button>
+    <div *ngFor="let user of users;">
+        <li>{{user.id}} - {{user.name }} - {{user.age}}</li>
+    </div>
 </div>
 
-id: <input type="text" [(ngModel)]="idToGet" />
-<button (click)='getUserById()'> Get users By ID </button>
-<li>{{u.name}} - {{u.age}}</li>
+<div>
+    <h3> Get User by ID</h3>
+    id: <input type="text" [(ngModel)]="idToGet" /><br>
+    <button (click)='getUserById()'> Get users By ID </button>
+    <li>{{u.name }} - {{u.age}}</li>
+</div>
+<div>
+    <h3> Get Users by Name</h3>
+    name: <input type="text" [(ngModel)]="nameToGet" /><br>
+    <button (click)='getUsersByName()'> Get user by Name</button>
+    <div *ngFor="let user of usersByName;">
+        <li>{{user.name}} - {{user.age}}</li>
+    </div>
+</div>
+
+<div>
+    <h3>Add a User</h3>
+    name: <input type="text" [(ngModel)]="nameToAdd" /> <br> age : <input type="text" [(ngModel)]="ageToAdd" /> <br>
+    <button (click)='addUser()'> AddUser</button>
+</div>
+
+<div>
+    <h3>Delete a User</h3>
+    id: <input type="text" [(ngModel)]="idToDelete" /><br>
+    <button (click)='deleteUserById()'> Delete users By ID </button>
+</div>
+
+<div>
+    <h3>Update a User Details</h3>
+    id: <input type="text" [(ngModel)]="idToUpdate" /><br> name: <input type="text" [(ngModel)]="nameToUpdate" /> <br> age : <input type="text" [(ngModel)]="ageToUpdate" /> <br>
+    <button (click)='updateUser()'> UpdateUser</button>
+</div>
