@@ -22,4 +22,12 @@ export class UserService {
   postUser(userToAdd : user) : Observable<user>{
     return this.http.post<user>('http://localhost:3000/users', userToAdd, this.httpOptions);
   }
+
+  putUser(idToUpdate : number , userToUpdate : user) :Observable<user>{
+    return this.http.put<user>('http://localhost:3000/users/' + idToUpdate, userToUpdate, this.httpOptions);
+  }
+
+  deleteUser(idToDelete : number) : Observable<user>{
+    return this.http.delete<user>('http://localhost:3000/users/' + idToDelete);
+  }
 }

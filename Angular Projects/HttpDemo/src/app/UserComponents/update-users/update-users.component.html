@@ -1,1 +1,9 @@
-<p>update-users works!</p>
+<h1> Update a User</h1>
+<div>
+    <h5>Enter the details to Update</h5>
+    <div>id: <input type="text" [(ngModel)]="idToUpdate" /></div>
+    <div>name: <input type="text" [(ngModel)]="nameToUpdate" /></div>
+    <div>age: <input type="text" [(ngModel)]="ageToUpdate" /></div>
+    <div>country: <input type="text" [(ngModel)]="countryToUpdate" /></div>
+    <div><button (click)="updateUser()">Update Details</button></div>
+</div>
