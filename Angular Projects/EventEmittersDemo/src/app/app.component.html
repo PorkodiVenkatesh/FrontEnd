@@ -1,0 +1,4 @@
+<h3>App Component</h3>
+<h5>The counter in app component {{counter}}</h5>
+<app-first-child [counterFC]="counter" (change)="counterUpdateinFC($event)"></app-first-child>
+<app-second-child [counterSC]="counter" (change)="counterUpdateinSC($event)"></app-second-child>
